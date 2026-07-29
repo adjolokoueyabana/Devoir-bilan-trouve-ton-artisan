@@ -1,0 +1,66 @@
+.hero {
+    background-color: #f1f8fc;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    color: #00497c;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    max-width: 700px;
+    margin: 20px auto 0;
+    color: #384050;
+    font-size: 1.1rem;
+}
+
+.how-it-works {
+    padding: 70px 20px;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    color: #00497c;
+    margin-bottom: 50px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.step-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 50%;
+    background: #0074c7;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.step-card h3 {
+    color: #00497c;
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    color: #384050;
+}

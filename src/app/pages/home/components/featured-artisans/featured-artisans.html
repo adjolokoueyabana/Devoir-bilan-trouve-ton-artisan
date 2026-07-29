@@ -1,0 +1,33 @@
+<section class="featured-artisans">
+
+  <div class="container">
+
+    <div class="text-center mb-5">
+
+      <h2>Les artisans du mois</h2>
+
+      <p>Découvrez une sélection d'artisans recommandés.</p>
+
+    </div>
+
+      <p>Nombre d'artisans : {{ artisans.length }}</p>
+
+      <div class="row g-4">
+
+      @for (artisan of artisans; track artisan.id) {
+
+        <div class="col-md-6 col-lg-4">
+
+          <app-artisan-card
+          [artisan]="artisan">
+          </app-artisan-card>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

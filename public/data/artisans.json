@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Martin Construction",
+    "specialty": "Maçon",
+    "category": "building",
+    "city": "Lyon",
+    "about": "Entreprise spécialisée dans les travaux de maçonnerie générale et de rénovation.",
+    "rating": 5,
+    "top": true,
+    "website": "https://martin-construction.fr",
+    "email": "contact@martin-construction.fr"
+  },
+  {
+    "id": 2,
+    "name": "Élec Pro",
+    "specialty": "Électricien",
+    "category": "building",
+    "city": "Grenoble",
+    "about": "Installation et dépannage électrique pour particuliers et professionnels.",
+    "rating": 4,
+    "top": true,
+    "website": "https://elecpro.fr",
+    "email": "contact@elecpro.fr"
+  },
+  {
+    "id": 3,
+    "name": "Bois & Passion",
+    "specialty": "Menuisier",
+    "category": "manufacturing",
+    "city": "Annecy",
+    "about": "Fabrication de meubles sur mesure et aménagement intérieur.",
+    "rating": 5,
+    "top": true,
+    "website": "https://boisetpassion.fr",
+    "email": "contact@boisetpassion.fr"
+  },
+  {
+    "id": 4,
+    "name": "Saveurs du Terroir",
+    "specialty": "Boulanger",
+    "category": "food",
+    "city": "Clermont-Ferrand",
+    "about": "Boulangerie artisanale proposant des produits frais et locaux.",
+    "rating": 5,
+    "top": false,
+    "website": "https://saveursduterroir.fr",
+    "email": "contact@saveursduterroir.fr"
+  },
+  {
+    "id": 5,
+    "name": "Net Services",
+    "specialty": "Entreprise de nettoyage",
+    "category": "services",
+    "city": "Saint-Étienne",
+    "about": "Prestations de nettoyage pour particuliers et entreprises.",
+    "rating": 4,
+    "top": false,
+    "website": "https://netservices.fr",
+    "email": "contact@netservices.fr"
+  },
+  {
+    "id": 6,
+    "name": "Plomberie Express",
+    "specialty": "Plombier",
+    "category": "building",
+    "city": "Valence",
+    "about": "Intervention rapide pour tous vos travaux de plomberie.",
+    "rating": 4,
+    "top": false,
+    "website": "https://plomberieexpress.fr",
+    "email": "contact@plomberieexpress.fr"
+  }
+]

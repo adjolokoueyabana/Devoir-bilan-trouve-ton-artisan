@@ -1,0 +1,42 @@
+@if (artisan) {
+
+  <h1>{{ artisan.name }}</h1>
+
+  <h2>{{ artisan.specialty }}</h2>
+
+  <p>📍 {{ artisan.city }}</p>
+
+  <app-rating
+    [rating]="artisan.rating">
+  </app-rating>
+
+  <p>{{ artisan.about }}</p>
+
+  <p>
+    Email :
+    <a [href]="'mailto:' + artisan.email">
+        {{ artisan.email }}
+    </a>
+  </p>
+
+  <p>
+    Site internet :
+    <a
+        [href]="artisan.website"
+        target="_blank"
+        rel="noopener noreferrer">
+        {{ artisan.website }}
+    </a>
+  </p>
+
+  <a
+    routerLink="/"
+    class="btn btn-secondary">
+    Retour à l’accueil
+  </a>
+
+} @else {
+
+  <p>Artisan introuvable.</p>
+
+}

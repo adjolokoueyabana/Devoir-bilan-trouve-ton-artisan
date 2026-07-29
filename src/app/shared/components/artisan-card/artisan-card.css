@@ -1,0 +1,25 @@
+.card {
+
+  border: none;
+  border-radius: 15px;
+  transition: transform .3s ease;
+
+}
+
+.card:hover {
+
+  transform: translateY(-8px);
+
+}
+
+.card-title {
+
+  color: #00497c;
+
+}
+
+.card-footer {
+
+  padding: 1rem;
+
+}
