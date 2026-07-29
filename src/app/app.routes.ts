@@ -7,6 +7,7 @@ import { PrivacyPolicy } from './pages/privacy-policy/privacy-policy';
 import { Accessibility } from './pages/accessibility/accessibility';
 import { Cookies } from './pages/cookies/cookies';
 import { NotFound } from './pages/not-found/not-found';
+import { Artisans } from './pages/artisans/artisans';
 
 export const routes: Routes = [
   {
@@ -39,6 +40,12 @@ export const routes: Routes = [
     path: 'artisan/:id',
     component: ArtisanDetail,
     title: 'Fiche artisan | Trouve ton artisan'
+  },
+
+  {
+    path: 'artisans',
+    component: Artisans,
+    title: 'Tous les artisans | Trouve ton artisan'
   },
 
   {

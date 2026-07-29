@@ -1,0 +1,84 @@
+<section class="artisans">
+
+  <div class="container py-5">
+
+    <div class="text-center mb-5">
+
+      <h1>Tous les artisans</h1>
+
+      <p>
+        Découvrez l’ensemble des artisans disponibles.
+      </p>
+
+    </div>
+
+    <div class="mb-4">
+
+        <label
+            for="category"
+            class="form-label">
+
+            Filtrer par catégorie
+
+        </label>
+
+        <select
+            id="category"
+            class="form-select"
+            (change)="selectedCategory = $any($event.target).value">
+
+            <option value="">
+            Toutes les catégories
+            </option>
+
+            <option value="building">
+            Bâtiment
+            </option>
+
+            <option value="manufacturing">
+            Fabrication
+            </option>
+
+            <option value="food">
+            Alimentation
+            </option>
+
+            <option value="services">
+            Services
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="row g-4">
+
+      @for (artisan of filteredArtisans; track artisan.id) {
+
+        <div class="col-md-6 col-lg-4">
+
+          <app-artisan-card
+            [artisan]="artisan">
+          </app-artisan-card>
+
+        </div>
+
+      }
+
+      @if (filteredArtisans.length === 0) {
+
+        <div class="col-12">
+
+            <p class="text-center text-muted">
+            Aucun artisan ne correspond à cette catégorie.
+            </p>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>
