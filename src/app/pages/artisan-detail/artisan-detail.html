@@ -1,42 +1,92 @@
-@if (artisan) {
+<section class="artisan-detail">
 
-  <h1>{{ artisan.name }}</h1>
+  <div class="container py-5">
 
-  <h2>{{ artisan.specialty }}</h2>
+    @if (artisan) {
 
-  <p>📍 {{ artisan.city }}</p>
+        <div class="row justify-content-center">
 
-  <app-rating
-    [rating]="artisan.rating">
-  </app-rating>
+            <div class="col-lg-8">
 
-  <p>{{ artisan.about }}</p>
+                <div class="card shadow-sm">
 
-  <p>
-    Email :
-    <a [href]="'mailto:' + artisan.email">
-        {{ artisan.email }}
-    </a>
-  </p>
+                    <div class="card-body">
 
-  <p>
-    Site internet :
-    <a
-        [href]="artisan.website"
-        target="_blank"
-        rel="noopener noreferrer">
-        {{ artisan.website }}
-    </a>
-  </p>
+                        <h1 class="text-primary mb-2">
+                            {{ artisan.name }}
+                        </h1>
 
-  <a
-    routerLink="/"
-    class="btn btn-secondary">
-    Retour à l’accueil
-  </a>
+                        <h4 class="text-secondary mb-3">
+                            {{ artisan.specialty }}
+                        </h4>
 
-} @else {
+                        <div class="d-flex align-items-center gap-3 mb-3">
 
-  <p>Artisan introuvable.</p>
+                            <span>
+                                📍 {{ artisan.city }}
+                            </span>
 
-}
+                            <app-rating
+                                [rating]="artisan.rating">
+                            </app-rating>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <h5>À propos</h5>
+
+                            <p class="mb-0">
+                                {{ artisan.about }}
+                            </p>
+
+                        </div>
+
+                        <div class="bg-light p-3 rounded">
+
+                            <h5>Coordonnées</h5>
+
+                            <p class="mb-2">
+                                <strong>Email :</strong>
+                                <a [href]="'mailto:' + artisan.email">
+                                {{ artisan.email }}
+                                </a>
+                            </p>
+
+                            <p class="mb-0">
+                                <strong>Site internet :</strong>
+                                <a
+                                [href]="artisan.website"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                {{ artisan.website }}
+                                </a>
+                            </p>
+
+                        </div>
+
+                        <div class="mt-4">
+
+                            <a
+                                routerLink="/"
+                                class="btn btn-primary">
+                                ← Retour à l'accueil
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        } @else {
+
+            <p>Artisan introuvable.</p>
+
+    }
+
+  </div>
+
+</section>
