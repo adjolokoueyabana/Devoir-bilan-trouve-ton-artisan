@@ -1,0 +1,115 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="800"
+  height="500"
+  viewBox="0 0 800 500"
+  role="img"
+  aria-labelledby="title description">
+
+  <title id="title">
+    Illustration d’une page introuvable
+  </title>
+
+  <desc id="description">
+    Une boîte à outils ouverte accompagnée d’une loupe.
+  </desc>
+
+  <rect
+    width="800"
+    height="500"
+    rx="32"
+    fill="#f1f8fc"
+  />
+
+  <circle
+    cx="615"
+    cy="165"
+    r="82"
+    fill="#d7ebf7"
+  />
+
+  <circle
+    cx="615"
+    cy="165"
+    r="47"
+    fill="none"
+    stroke="#0074c7"
+    stroke-width="18"
+  />
+
+  <line
+    x1="650"
+    y1="200"
+    x2="710"
+    y2="260"
+    stroke="#0074c7"
+    stroke-width="22"
+    stroke-linecap="round"
+  />
+
+  <rect
+    x="155"
+    y="215"
+    width="390"
+    height="185"
+    rx="20"
+    fill="#ffffff"
+    stroke="#00497c"
+    stroke-width="12"
+  />
+
+  <path
+    d="M230 215 V175 C230 145 255 120 285 120 H415 C445 120 470 145 470 175 V215"
+    fill="none"
+    stroke="#00497c"
+    stroke-width="12"
+  />
+
+  <rect
+    x="155"
+    y="215"
+    width="390"
+    height="55"
+    fill="#82b864"
+  />
+
+  <rect
+    x="325"
+    y="245"
+    width="50"
+    height="55"
+    rx="8"
+    fill="#00497c"
+  />
+
+  <path
+    d="M235 345 L280 300"
+    stroke="#cd2c2e"
+    stroke-width="18"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M280 345 L235 300"
+    stroke="#cd2c2e"
+    stroke-width="18"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M425 345 H485"
+    stroke="#0074c7"
+    stroke-width="18"
+    stroke-linecap="round"
+  />
+
+  <circle
+    cx="455"
+    cy="345"
+    r="35"
+    fill="none"
+    stroke="#0074c7"
+    stroke-width="12"
+  />
+
+</svg>

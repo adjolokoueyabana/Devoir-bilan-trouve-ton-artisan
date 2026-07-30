@@ -4,7 +4,7 @@
 
     <div class="text-center mb-5">
 
-      <h1>Tous les artisans</h1>
+      <h1>{{ categoryTitle }}</h1>
 
       <p>
         Découvrez l’ensemble des artisans disponibles.
@@ -14,42 +14,82 @@
 
     <div class="mb-4">
 
-        <label
-            for="category"
-            class="form-label">
+      <label
+        for="search"
+        class="form-label">
 
-            Filtrer par catégorie
+        Rechercher un artisan
 
-        </label>
+      </label>
 
-        <select
-            id="category"
-            class="form-select"
-            (change)="selectedCategory = $any($event.target).value">
-
-            <option value="">
-            Toutes les catégories
-            </option>
-
-            <option value="building">
-            Bâtiment
-            </option>
-
-            <option value="manufacturing">
-            Fabrication
-            </option>
-
-            <option value="food">
-            Alimentation
-            </option>
-
-            <option value="services">
-            Services
-            </option>
-
-        </select>
+      <input
+        id="search"
+        type="search"
+        class="form-control"
+        placeholder="Nom, spécialité ou ville"
+        [value]="searchTerm"
+        (input)="searchTerm = $any($event.target).value">
 
     </div>
+
+    <div class="mb-4">
+
+      <label
+        for="category"
+        class="form-label">
+
+        Filtrer par catégorie
+
+      </label>
+
+      <select
+        id="category"
+        class="form-select"
+        [value]="selectedCategory"
+        (change)="onCategoryChange($any($event.target).value)">
+
+        <option value="">
+          Toutes les catégories
+        </option>
+
+        <option value="Bâtiment">
+          Bâtiment
+        </option>
+
+        <option value="Fabrication">
+          Fabrication
+        </option>
+
+        <option value="Alimentation">
+          Alimentation
+        </option>
+
+        <option value="Services">
+          Services
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="mb-4">
+
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        [disabled]="!searchTerm && !selectedCategory"
+        (click)="resetFilters()">
+
+        Réinitialiser les filtres
+
+      </button>
+
+    </div>
+
+    <p class="text-muted mb-4">
+      {{ filteredArtisans.length }}
+      {{ filteredArtisans.length > 1 ? 'artisans trouvés' : 'artisan trouvé' }}
+    </p>
 
     <div class="row g-4">
 
@@ -69,9 +109,9 @@
 
         <div class="col-12">
 
-            <p class="text-center text-muted">
+          <p class="text-center text-muted">
             Aucun artisan ne correspond à cette catégorie.
-            </p>
+          </p>
 
         </div>
 

@@ -4,86 +4,324 @@
 
     @if (artisan) {
 
-        <div class="row justify-content-center">
+      <div class="row justify-content-center">
 
-            <div class="col-lg-8">
+        <div class="col-lg-8">
 
-                <div class="card shadow-sm">
+          <div class="card shadow-sm">
 
-                    <div class="card-body">
+            <div class="card-body">
 
-                        <h1 class="text-primary mb-2">
-                            {{ artisan.name }}
-                        </h1>
+              <h1 class="text-primary mb-2">
+                {{ artisan.name }}
+              </h1>
 
-                        <h4 class="text-secondary mb-3">
-                            {{ artisan.specialty }}
-                        </h4>
+              <h2 class="h4 text-secondary mb-3">
+                {{ artisan.specialty }}
+              </h2>
 
-                        <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
 
-                            <span>
-                                📍 {{ artisan.city }}
-                            </span>
+                <span>
+                  📍 {{ artisan.location }}
+                </span>
 
-                            <app-rating
-                                [rating]="artisan.rating">
-                            </app-rating>
+                <app-rating
+                  [rating]="+artisan.note">
+                </app-rating>
 
-                        </div>
+              </div>
 
-                        <div class="mb-4">
+              <section
+                class="mb-4"
+                aria-labelledby="about-title">
 
-                            <h5>À propos</h5>
+                <h2
+                  id="about-title"
+                  class="h5">
 
-                            <p class="mb-0">
-                                {{ artisan.about }}
-                            </p>
+                  À propos
 
-                        </div>
+                </h2>
 
-                        <div class="bg-light p-3 rounded">
+                <p class="mb-0">
+                  {{ artisan.about }}
+                </p>
 
-                            <h5>Coordonnées</h5>
+              </section>
 
-                            <p class="mb-2">
-                                <strong>Email :</strong>
-                                <a [href]="'mailto:' + artisan.email">
-                                {{ artisan.email }}
-                                </a>
-                            </p>
+              <section
+                class="bg-light p-3 rounded mb-4"
+                aria-labelledby="contact-details-title">
 
-                            <p class="mb-0">
-                                <strong>Site internet :</strong>
-                                <a
-                                [href]="artisan.website"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                {{ artisan.website }}
-                                </a>
-                            </p>
+                <h2
+                  id="contact-details-title"
+                  class="h5">
 
-                        </div>
+                  Coordonnées
 
-                        <div class="mt-4">
+                </h2>
 
-                            <a
-                                routerLink="/"
-                                class="btn btn-primary">
-                                ← Retour à l'accueil
-                            </a>
+                <p class="mb-2">
 
-                        </div>
+                  <strong>Adresse électronique :</strong>
+
+                  {{ artisan.email }}
+
+                </p>
+
+                @if (artisan.website) {
+
+                  <p class="mb-0">
+
+                    <strong>Site internet :</strong>
+
+                    <a
+                      [href]="artisan.website"
+                      target="_blank"
+                      rel="noopener noreferrer">
+
+                      {{ artisan.website }}
+
+                    </a>
+
+                  </p>
+
+                } @else {
+
+                  <p class="mb-0">
+
+                    <strong>Site internet :</strong>
+
+                    Non renseigné
+
+                  </p>
+
+                }
+
+              </section>
+
+              <section
+                aria-labelledby="contact-form-title">
+
+                <h2
+                  id="contact-form-title"
+                  class="h4 mb-3">
+
+                  Contacter cet artisan
+
+                </h2>
+
+                <p>
+                  Remplissez ce formulaire pour demander des renseignements,
+                  une prestation ou un tarif.
+                </p>
+
+                <form
+                  #contactForm="ngForm"
+                  (ngSubmit)="onSubmit(contactForm)"
+                  novalidate>
+
+                  <div class="mb-3">
+
+                    <label
+                      for="contact-name"
+                      class="form-label">
+
+                      Nom
+
+                    </label>
+
+                    <input
+                      id="contact-name"
+                      name="name"
+                      type="text"
+                      class="form-control"
+                      autocomplete="name"
+                      required
+                      minlength="2"
+                      maxlength="100"
+                      [(ngModel)]="contactMessage.name"
+                      #name="ngModel"
+                      [class.is-invalid]="name.invalid && name.touched">
+
+                    @if (name.invalid && name.touched) {
+
+                      <div class="invalid-feedback">
+
+                        @if (name.errors?.['required']) {
+                          Le nom est obligatoire.
+                        }
+
+                        @if (name.errors?.['minlength']) {
+                          Le nom doit contenir au moins 2 caractères.
+                        }
+
+                      </div>
+
+                    }
+
+                  </div>
+
+                  <div class="mb-3">
+
+                    <label
+                      for="contact-subject"
+                      class="form-label">
+
+                      Objet
+
+                    </label>
+
+                    <input
+                      id="contact-subject"
+                      name="subject"
+                      type="text"
+                      class="form-control"
+                      required
+                      minlength="3"
+                      maxlength="150"
+                      [(ngModel)]="contactMessage.subject"
+                      #subject="ngModel"
+                      [class.is-invalid]="subject.invalid && subject.touched">
+
+                    @if (subject.invalid && subject.touched) {
+
+                      <div class="invalid-feedback">
+
+                        @if (subject.errors?.['required']) {
+                          L’objet est obligatoire.
+                        }
+
+                        @if (subject.errors?.['minlength']) {
+                          L’objet doit contenir au moins 3 caractères.
+                        }
+
+                      </div>
+
+                    }
+
+                  </div>
+
+                  <div class="mb-3">
+
+                    <label
+                      for="contact-message"
+                      class="form-label">
+
+                      Message
+
+                    </label>
+
+                    <textarea
+                      id="contact-message"
+                      name="message"
+                      class="form-control"
+                      rows="6"
+                      required
+                      minlength="10"
+                      maxlength="2000"
+                      [(ngModel)]="contactMessage.message"
+                      #message="ngModel"
+                      [class.is-invalid]="message.invalid && message.touched">
+                    </textarea>
+
+                    @if (message.invalid && message.touched) {
+
+                      <div class="invalid-feedback">
+
+                        @if (message.errors?.['required']) {
+                          Le message est obligatoire.
+                        }
+
+                        @if (message.errors?.['minlength']) {
+                          Le message doit contenir au moins 10 caractères.
+                        }
+
+                      </div>
+
+                    }
+
+                  </div>
+
+                  @if (successMessage) {
+
+                    <div
+                      class="alert alert-success"
+                      role="status">
+
+                      {{ successMessage }}
 
                     </div>
-                </div>
+
+                  }
+
+                  @if (errorMessage) {
+
+                    <div
+                      class="alert alert-danger"
+                      role="alert">
+
+                      {{ errorMessage }}
+
+                    </div>
+
+                  }
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    [disabled]="contactForm.invalid || isSubmitting">
+
+                    @if (isSubmitting) {
+                      Envoi en cours…
+                    } @else {
+                      Envoyer le message
+                    }
+
+                  </button>
+
+                </form>
+
+              </section>
+
+              <div class="mt-4">
+
+                <a
+                  routerLink="/artisans"
+                  class="btn btn-outline-secondary">
+
+                  ← Retour aux artisans
+
+                </a>
+
+              </div>
 
             </div>
-        </div>
-        
-        } @else {
 
-            <p>Artisan introuvable.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    } @else {
+
+      <div
+        class="alert alert-warning"
+        role="alert">
+
+        Artisan introuvable.
+
+      </div>
+
+      <a
+        routerLink="/artisans"
+        class="btn btn-primary">
+
+        Retour aux artisans
+
+      </a>
 
     }
 

@@ -1,72 +1,144 @@
-<header class="shadow-sm">
+<header class="site-header shadow-sm">
 
-    <nav class="navbar navbar-expand-lg bg-white">
+  <nav
+    class="navbar navbar-expand-lg bg-white"
+    aria-label="Navigation principale">
 
-        <div class="container">
+    <div class="container">
 
-            <a class="navbar-brand" routerLink="/">
+      <a
+        class="navbar-brand"
+        routerLink="/"
+        aria-label="Retour à l’accueil">
 
-                <img
-                    src="/images/Logo.png"
-                    alt="Trouve ton artisan"
-                    height="60">
+        <img
+          src="/images/logo.png"
+          alt="Trouve ton artisan"
+          class="site-header__logo">
+
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#main-navigation"
+        aria-controls="main-navigation"
+        aria-expanded="false"
+        aria-label="Afficher ou masquer le menu">
+
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+      <div
+        class="collapse navbar-collapse"
+        id="main-navigation">
+
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              routerLink="/artisans">
+
+              Tous les artisans
 
             </a>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbar">
+          </li>
 
-                <span class="navbar-toggler-icon"></span>
+          <li class="nav-item">
 
-            </button>
+            <a
+              class="nav-link"
+              routerLink="/artisans"
+              [queryParams]="{ category: 'Bâtiment' }">
 
-            <div
-                class="collapse navbar-collapse"
-                id="navbar">
+              Bâtiment
 
-                <ul class="navbar-nav ms-auto">
+            </a>
 
-                    <li class="nav-item">
-                        <a
-                            class="nav-link"
-                            routerLink="/artisans/building">
-                            Bâtiment
-                        </a>
-                    </li>
+          </li>
 
-                    <li class="nav-item">
-                        <a
-                            class="nav-link"
-                            routerLink="/artisans/services">
-                            Services
-                        </a>
-                    </li>
+          <li class="nav-item">
 
-                    <li class="nav-item">
-                        <a
-                            class="nav-link"
-                            routerLink="/artisans/manufacturing">
-                            Fabrication
-                        </a>
-                    </li>
+            <a
+              class="nav-link"
+              routerLink="/artisans"
+              [queryParams]="{ category: 'Services' }">
 
-                    <li class="nav-item">
-                        <a
-                            class="nav-link"
-                            routerLink="/artisans/food">
-                            Alimentation
-                        </a>
-                    </li>
+              Services
 
-                </ul>
+            </a>
 
-            </div>
+          </li>
 
-        </div>
+          <li class="nav-item">
 
-    </nav>
+            <a
+              class="nav-link"
+              routerLink="/artisans"
+              [queryParams]="{ category: 'Fabrication' }">
+
+              Fabrication
+
+            </a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              routerLink="/artisans"
+              [queryParams]="{ category: 'Alimentation' }">
+
+              Alimentation
+
+            </a>
+
+          </li>
+
+        </ul>
+
+        <form
+          class="d-flex ms-lg-3 mt-3 mt-lg-0"
+          role="search"
+          (ngSubmit)="onSearch()">
+
+          <label
+            class="visually-hidden"
+            for="header-search">
+
+            Rechercher un artisan
+
+          </label>
+
+          <input
+            id="header-search"
+            class="form-control me-2"
+            type="search"
+            name="search"
+            placeholder="Rechercher"
+            aria-label="Rechercher un artisan"
+            [(ngModel)]="searchTerm">
+
+          <button
+            class="btn btn-primary"
+            type="submit">
+
+            Rechercher
+
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </nav>
 
 </header>
