@@ -1,13 +1,9 @@
 .rating {
-
-  color: #f1c40f;
+  color: var(--color-rating);
   font-size: 1.2rem;
   letter-spacing: 2px;
-
 }
 
 .filled {
-
-  color: #f1c40f;
-
+  color: var(--color-rating);
 }

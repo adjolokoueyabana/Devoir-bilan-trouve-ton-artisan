@@ -25,16 +25,10 @@ export class FeaturedArtisans implements OnInit {
 
   ngOnInit(): void {
 
-    console.log('FeaturedArtisans chargé');
-
     this.artisanService.getArtisans().subscribe(data => {
-
-      console.log('Données reçues :', data);
 
       this.artisans = data.filter(artisan => artisan.top);
       this.changeDetectorRef.markForCheck();
-
-      console.log('Artisans du mois :', this.artisans);
 
     });
 

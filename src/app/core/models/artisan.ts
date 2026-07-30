@@ -1,6 +1,6 @@
 export interface Artisan {
 
-  id: number;
+  id: string;
 
   name: string;
 
@@ -8,15 +8,15 @@ export interface Artisan {
 
   category: string;
 
-  city: string;
+  location: string;
 
   about: string;
 
-  rating: number;
+  note: string;
 
   top: boolean;
 
-  website?: string;
+  website: string;
 
   email: string;
 

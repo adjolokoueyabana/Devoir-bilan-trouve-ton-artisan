@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 import { Artisan } from '../models/artisan';
 
@@ -14,27 +14,21 @@ export class ArtisanService {
   private readonly apiUrl = '/data/artisans.json';
 
   getArtisans(): Observable<Artisan[]> {
+
     return this.http.get<Artisan[]>(this.apiUrl);
+
   }
 
-  getArtisanById(id: number): Observable<Artisan | undefined> {
+  getArtisanById(id: string): Observable<Artisan | undefined> {
 
-  return new Observable(observer => {
+    return this.getArtisans().pipe(
 
-    this.getArtisans().subscribe(artisans => {
-
-      observer.next(
-
+      map(artisans =>
         artisans.find(artisan => artisan.id === id)
+      )
 
-      );
+    );
 
-      observer.complete();
-
-    });
-
-  });
-
-}
+  }
 
 }
