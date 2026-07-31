@@ -1,13 +1,17 @@
+<!-- Composant affichant la note de l'artisan sous forme d'étoiles -->
 <div class="rating">
 
+  <!-- Parcours des cinq étoiles -->
   @for (star of stars; track star) {
 
+    <!-- Affiche une étoile pleine si la note est atteinte -->
     @if (star <= rating) {
 
       <span class="filled">★</span>
 
     } @else {
 
+      <!-- Affiche une étoile vide sinon -->
       <span>☆</span>
 
     }

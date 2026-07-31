@@ -4,7 +4,7 @@ import { Hero } from './components/hero/hero';
 import { HowItWorks } from './components/how-it-works/how-it-works';
 import { FeaturedArtisans } from './components/featured-artisans/featured-artisans';
 
-
+// Composant représentant la page d'accueil du site.
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,7 +12,7 @@ import { FeaturedArtisans } from './components/featured-artisans/featured-artisa
     Hero,
     HowItWorks,
     FeaturedArtisans,
-    
+
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'

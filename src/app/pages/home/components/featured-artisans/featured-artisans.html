@@ -1,7 +1,9 @@
+<!-- Section présentant les artisans mis en avant du mois -->
 <section class="featured-artisans">
 
   <div class="container">
 
+    <!-- Titre et description de la section -->
     <div class="text-center mb-5">
 
       <h2>Les artisans du mois</h2>
@@ -10,8 +12,10 @@
 
     </div>
 
+      <!-- Nombre d'artisans affichés -->
       <p>Nombre d'artisans : {{ artisans.length }}</p>
 
+      <!-- Liste des artisans sélectionnés -->
       <div class="row g-4">
 
       @for (artisan of artisans; track artisan.id) {

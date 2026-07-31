@@ -1,31 +1,44 @@
+<!-- Carte de présentation d'un artisan -->
 <div class="card h-100 shadow-sm">
+
   <div class="card-body">
+
+    <!-- Nom de l'artisan -->
     <h3 class="card-title">
       {{ artisan.name }}
     </h3>
 
+    <!-- Spécialité de l'artisan -->
     <h5 class="artisan-specialty">
       {{ artisan.specialty }}
     </h5>
 
+    <!-- Localisation de l'artisan -->
     <p class="artisan-location">
       📍 {{ artisan.location }}
     </p>
 
+    <!-- Affichage de la note de l'artisan -->
     <app-rating
       [rating]="+artisan.note">
     </app-rating>
 
+    <!-- Courte présentation de l'artisan -->
     <p class="artisan-description mt-3">
       {{ artisan.about }}
     </p>
+
   </div>
 
   <div class="card-footer border-0">
+
+    <!-- Lien vers la fiche détaillée de l'artisan -->
     <a
       class="btn btn-primary w-100"
       [routerLink]="['/artisan', artisan.id]">
       Voir le profil
     </a>
+
   </div>
+
 </div>

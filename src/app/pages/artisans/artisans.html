@@ -1,7 +1,9 @@
+<!-- Page affichant la liste des artisans -->
 <section class="artisans">
 
   <div class="container py-5">
 
+    <!-- Titre et description de la page -->
     <div class="text-center mb-5">
 
       <h1>{{ categoryTitle }}</h1>
@@ -12,6 +14,7 @@
 
     </div>
 
+    <!-- Champ de recherche des artisans -->
     <div class="mb-4">
 
       <label
@@ -32,6 +35,7 @@
 
     </div>
 
+    <!-- Liste déroulante permettant de filtrer les artisans par catégorie -->
     <div class="mb-4">
 
       <label
@@ -72,6 +76,7 @@
 
     </div>
 
+    <!-- Bouton permettant de réinitialiser les filtres -->
     <div class="mb-4">
 
       <button
@@ -86,11 +91,13 @@
 
     </div>
 
+    <!-- Nombre d'artisans correspondant aux critères de recherche -->
     <p class="text-muted mb-4">
       {{ filteredArtisans.length }}
       {{ filteredArtisans.length > 1 ? 'artisans trouvés' : 'artisan trouvé' }}
     </p>
 
+    <!-- Affichage de la liste des artisans -->
     <div class="row g-4">
 
       @for (artisan of filteredArtisans; track artisan.id) {
@@ -105,6 +112,7 @@
 
       }
 
+      <!-- Message affiché lorsqu'aucun artisan ne correspond aux critères -->
       @if (filteredArtisans.length === 0) {
 
         <div class="col-12">
