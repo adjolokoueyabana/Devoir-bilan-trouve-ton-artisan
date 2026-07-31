@@ -3,11 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './shared/components/header/header';
 import { Footer } from './shared/components/footer/footer';
 
-
+// Composant racine de l'application.
 @Component({
   selector: 'app-root',
   standalone: true,
-   imports: [
+  imports: [
     RouterOutlet,
     Header,
     Footer
@@ -16,5 +16,8 @@ import { Footer } from './shared/components/footer/footer';
   styleUrl: './app.css'
 })
 export class App {
+
+  // Titre de l'application.
   protected readonly title = signal('Devoir-trouve-ton-artisan');
+
 }

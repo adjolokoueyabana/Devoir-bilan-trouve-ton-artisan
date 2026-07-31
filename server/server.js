@@ -9,7 +9,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: 'http://localhost:4200'
+  origin: [
+    'http://localhost:4200',
+    'https://superdevop.alwaysdata.net'
+  ]
 }));
 
 app.use(express.json());

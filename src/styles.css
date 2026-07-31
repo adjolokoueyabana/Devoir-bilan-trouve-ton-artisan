@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* Déclaration des polices Graphik */
 @font-face {
   font-family: 'Graphik';
   src: url('/fonts/Graphik-Regular-Trial.otf') format('opentype');
@@ -23,6 +23,7 @@
   font-display: swap;
 }
 
+/* Variables globales de couleurs */
 :root {
   --color-background-light: #f1f8fc;
   --color-primary: #0074c7;
@@ -34,6 +35,7 @@
   --color-rating: #f1c40f;
 }
 
+/* Styles généraux de la page */
 html,
 body {
   font-family: 'Graphik', Arial, sans-serif;
@@ -41,6 +43,7 @@ body {
   background-color: var(--color-white);
 }
 
+/* Utilisation de la même police pour les éléments de formulaire */
 button,
 input,
 textarea,
@@ -48,6 +51,7 @@ select {
   font: inherit;
 }
 
+/* Personnalisation du bouton principal Bootstrap */
 .btn-primary {
   --bs-btn-color: var(--color-white);
   --bs-btn-bg: var(--color-primary);

@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { Artisan } from '../../../core/models/artisan';
 import { Rating } from '../rating/rating';
 
+// Composant affichant les informations principales d'un artisan.
 @Component({
   selector: 'app-artisan-card',
   imports: [
@@ -15,6 +16,7 @@ import { Rating } from '../rating/rating';
 })
 export class ArtisanCard {
 
+  // Artisan reçu en entrée depuis le composant parent.
   @Input({ required: true })
   artisan!: Artisan;
 

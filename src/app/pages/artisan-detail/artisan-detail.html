@@ -1,7 +1,9 @@
+<!-- Page de détail d'un artisan -->
 <section class="artisan-detail">
 
   <div class="container py-5">
 
+    <!-- Vérifie que l'artisan existe avant d'afficher ses informations -->
     @if (artisan) {
 
       <div class="row justify-content-center">
@@ -12,6 +14,7 @@
 
             <div class="card-body">
 
+              <!-- Informations principales de l'artisan -->
               <h1 class="text-primary mb-2">
                 {{ artisan.name }}
               </h1>
@@ -26,12 +29,14 @@
                   📍 {{ artisan.location }}
                 </span>
 
+                <!-- Affichage de la note de l'artisan -->
                 <app-rating
                   [rating]="+artisan.note">
                 </app-rating>
 
               </div>
 
+              <!-- Présentation de l'artisan -->
               <section
                 class="mb-4"
                 aria-labelledby="about-title">
@@ -50,6 +55,7 @@
 
               </section>
 
+              <!-- Coordonnées de l'artisan -->
               <section
                 class="bg-light p-3 rounded mb-4"
                 aria-labelledby="contact-details-title">
@@ -70,6 +76,7 @@
 
                 </p>
 
+                <!-- Affiche le site internet s'il est renseigné -->
                 @if (artisan.website) {
 
                   <p class="mb-0">
@@ -101,6 +108,7 @@
 
               </section>
 
+              <!-- Formulaire de contact -->
               <section
                 aria-labelledby="contact-form-title">
 
@@ -122,6 +130,7 @@
                   (ngSubmit)="onSubmit(contactForm)"
                   novalidate>
 
+                  <!-- Champ Nom -->
                   <div class="mb-3">
 
                     <label
@@ -145,6 +154,7 @@
                       #name="ngModel"
                       [class.is-invalid]="name.invalid && name.touched">
 
+                    <!-- Messages de validation du nom -->
                     @if (name.invalid && name.touched) {
 
                       <div class="invalid-feedback">
@@ -163,6 +173,7 @@
 
                   </div>
 
+                  <!-- Champ Objet -->
                   <div class="mb-3">
 
                     <label
@@ -185,6 +196,7 @@
                       #subject="ngModel"
                       [class.is-invalid]="subject.invalid && subject.touched">
 
+                    <!-- Messages de validation de l'objet -->
                     @if (subject.invalid && subject.touched) {
 
                       <div class="invalid-feedback">
@@ -203,6 +215,7 @@
 
                   </div>
 
+                  <!-- Champ Message -->
                   <div class="mb-3">
 
                     <label
@@ -226,6 +239,7 @@
                       [class.is-invalid]="message.invalid && message.touched">
                     </textarea>
 
+                    <!-- Messages de validation du message -->
                     @if (message.invalid && message.touched) {
 
                       <div class="invalid-feedback">
@@ -244,6 +258,7 @@
 
                   </div>
 
+                  <!-- Message affiché après un envoi réussi -->
                   @if (successMessage) {
 
                     <div
@@ -256,6 +271,7 @@
 
                   }
 
+                  <!-- Message affiché en cas d'erreur -->
                   @if (errorMessage) {
 
                     <div
@@ -268,6 +284,7 @@
 
                   }
 
+                  <!-- Bouton d'envoi du formulaire -->
                   <button
                     type="submit"
                     class="btn btn-primary"
@@ -285,6 +302,7 @@
 
               </section>
 
+              <!-- Lien de retour vers la liste des artisans -->
               <div class="mt-4">
 
                 <a
@@ -307,6 +325,7 @@
 
     } @else {
 
+      <!-- Message affiché si aucun artisan n'est trouvé -->
       <div
         class="alert alert-warning"
         role="alert">

@@ -5,6 +5,7 @@ import { Artisan } from '../../core/models/artisan';
 import { ArtisanService } from '../../core/services/artisan';
 import { ArtisanCard } from '../../shared/components/artisan-card/artisan-card';
 
+// Composant affichant la liste des artisans et les fonctionnalités de recherche.
 @Component({
   selector: 'app-artisans',
   imports: [
@@ -15,15 +16,20 @@ import { ArtisanCard } from '../../shared/components/artisan-card/artisan-card';
 })
 export class Artisans implements OnInit {
 
+  // Injection des services nécessaires au composant.
   private artisanService = inject(ArtisanService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private changeDetectorRef = inject(ChangeDetectorRef);
 
+  // Liste complète des artisans.
   artisans: Artisan[] = [];
+
+  // Catégorie et texte de recherche sélectionnés par l'utilisateur.
   selectedCategory = '';
   searchTerm = '';
 
+  // Chargement des paramètres de l'URL et des données des artisans.
   ngOnInit(): void {
 
       this.route.queryParamMap.subscribe(params => {
@@ -48,6 +54,7 @@ export class Artisans implements OnInit {
 
   }
 
+  // Retourne le titre à afficher selon la catégorie sélectionnée.
   get categoryTitle(): string {
 
     switch (this.selectedCategory) {
@@ -71,6 +78,7 @@ export class Artisans implements OnInit {
 
   }
 
+  // Filtre les artisans selon la catégorie et la recherche saisie.
   get filteredArtisans(): Artisan[] {
 
     const search = this.searchTerm
@@ -95,6 +103,7 @@ export class Artisans implements OnInit {
 
   }
 
+  // Réinitialise les filtres et revient à la liste complète des artisans.
   resetFilters(): void {
 
     this.searchTerm = '';
@@ -104,6 +113,7 @@ export class Artisans implements OnInit {
 
   }
 
+  // Met à jour la catégorie sélectionnée et l'URL.
   onCategoryChange(category: string): void {
 
     this.selectedCategory = category;
