@@ -1,4 +1,5 @@
 /* Déclaration des polices Graphik */
+
 @font-face {
   font-family: 'Graphik';
   src: url('/fonts/Graphik-Regular-Trial.otf') format('opentype');
@@ -23,19 +24,32 @@
   font-display: swap;
 }
 
+/* Variables Sass de la charte graphique */
+
+$color-background-light: #f1f8fc;
+$color-primary: #0074c7;
+$color-primary-dark: #00497c;
+$color-text: #384050;
+$color-danger: #cd2c2e;
+$color-success: #82b864;
+$color-white: #ffffff;
+$color-rating: #f1c40f;
+
 /* Variables globales de couleurs */
+
 :root {
-  --color-background-light: #f1f8fc;
-  --color-primary: #0074c7;
-  --color-primary-dark: #00497c;
-  --color-text: #384050;
-  --color-danger: #cd2c2e;
-  --color-success: #82b864;
-  --color-white: #ffffff;
-  --color-rating: #f1c40f;
+  --color-background-light: #{$color-background-light};
+  --color-primary: #{$color-primary};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-text: #{$color-text};
+  --color-danger: #{$color-danger};
+  --color-success: #{$color-success};
+  --color-white: #{$color-white};
+  --color-rating: #{$color-rating};
 }
 
 /* Styles généraux de la page */
+
 html,
 body {
   font-family: 'Graphik', Arial, sans-serif;
@@ -44,6 +58,7 @@ body {
 }
 
 /* Utilisation de la même police pour les éléments de formulaire */
+
 button,
 input,
 textarea,
@@ -52,21 +67,18 @@ select {
 }
 
 /* Personnalisation du bouton principal Bootstrap */
+
 .btn-primary {
   --bs-btn-color: var(--color-white);
   --bs-btn-bg: var(--color-primary);
   --bs-btn-border-color: var(--color-primary);
-
   --bs-btn-hover-color: var(--color-white);
   --bs-btn-hover-bg: var(--color-primary-dark);
   --bs-btn-hover-border-color: var(--color-primary-dark);
-
   --bs-btn-focus-shadow-rgb: 0, 116, 199;
-
   --bs-btn-active-color: var(--color-white);
   --bs-btn-active-bg: var(--color-primary-dark);
   --bs-btn-active-border-color: var(--color-primary-dark);
-
   --bs-btn-disabled-color: var(--color-white);
   --bs-btn-disabled-bg: var(--color-primary);
   --bs-btn-disabled-border-color: var(--color-primary);

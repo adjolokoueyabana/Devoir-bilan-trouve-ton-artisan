@@ -12,7 +12,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   ],
 
   templateUrl: './header.html',
-  styleUrl: './header.css'
+  styleUrl: './header.scss'
 })
 export class Header implements OnInit {
 

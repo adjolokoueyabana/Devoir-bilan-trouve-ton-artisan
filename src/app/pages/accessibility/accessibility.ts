@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './accessibility.html',
-  styleUrl: './accessibility.css',
+  styleUrl: './accessibility.scss',
 })
 export class Accessibility {}

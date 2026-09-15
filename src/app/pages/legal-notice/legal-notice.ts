@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './legal-notice.html',
-  styleUrl: './legal-notice.css',
+  styleUrl: './legal-notice.scss',
 })
 export class LegalNotice {}
+
