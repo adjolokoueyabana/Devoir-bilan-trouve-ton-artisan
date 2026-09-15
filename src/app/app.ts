@@ -13,7 +13,7 @@ import { Footer } from './shared/components/footer/footer';
     Footer
   ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.scss'
 })
 export class App {
 

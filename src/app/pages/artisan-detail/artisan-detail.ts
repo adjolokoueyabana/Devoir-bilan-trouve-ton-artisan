@@ -29,7 +29,7 @@ import { Rating } from '../../shared/components/rating/rating';
     RouterLink
   ],
   templateUrl: './artisan-detail.html',
-  styleUrl: './artisan-detail.css',
+  styleUrl: './artisan-detail.scss',
 })
 export class ArtisanDetail implements OnInit {
 

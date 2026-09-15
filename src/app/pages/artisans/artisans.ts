@@ -12,7 +12,7 @@ import { ArtisanCard } from '../../shared/components/artisan-card/artisan-card';
     ArtisanCard
   ],
   templateUrl: './artisans.html',
-  styleUrl: './artisans.css',
+  styleUrl: './artisans.scss',
 })
 export class Artisans implements OnInit {
 

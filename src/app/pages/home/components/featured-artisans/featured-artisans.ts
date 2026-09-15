@@ -14,7 +14,7 @@ import { ArtisanCard } from '../../../../shared/components/artisan-card/artisan-
   ],
 
   templateUrl: './featured-artisans.html',
-  styleUrl: './featured-artisans.css'
+  styleUrl: './featured-artisans.scss'
 })
 export class FeaturedArtisans implements OnInit {
 

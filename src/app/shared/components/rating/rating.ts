@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-rating',
   imports: [],
   templateUrl: './rating.html',
-  styleUrl: './rating.css',
+  styleUrl: './rating.scss',
 })
 export class Rating {
 

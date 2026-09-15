@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './how-it-works.html',
-  styleUrl: './how-it-works.css',
+  styleUrl: './how-it-works.scss',
 })
 export class HowItWorks {}

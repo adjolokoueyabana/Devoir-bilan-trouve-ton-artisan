@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './cookies.html',
-  styleUrl: './cookies.css',
+  styleUrl: './cookies.scss',
 })
 export class Cookies {}
+

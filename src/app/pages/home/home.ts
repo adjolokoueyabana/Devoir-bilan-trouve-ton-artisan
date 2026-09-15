@@ -15,6 +15,6 @@ import { FeaturedArtisans } from './components/featured-artisans/featured-artisa
 
   ],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrl: './home.scss'
 })
 export class Home {}

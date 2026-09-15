@@ -12,7 +12,7 @@ import { Rating } from '../rating/rating';
     Rating
   ],
   templateUrl: './artisan-card.html',
-  styleUrl: './artisan-card.css',
+  styleUrl: './artisan-card.scss',
 })
 export class ArtisanCard {
 
